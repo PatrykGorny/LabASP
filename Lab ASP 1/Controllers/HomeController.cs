@@ -81,7 +81,9 @@ public class HomeController : Controller
             ViewBag.ErrorMessage = "Nie urodziłeś sie w przyszłości";
             return View("AgeError");
         }
-        ViewBag.Result = future.Year - birth.Year;
+
+        var dni = (future - birth).Days;
+        ViewBag.Result = dni / 365;
         return View();
         
 
