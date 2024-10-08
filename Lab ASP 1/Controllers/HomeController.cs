@@ -78,7 +78,7 @@ public class HomeController : Controller
         ViewBag.future = future;
         if (birth > future)
         {
-            ViewBag.ErrorMessage = "Nie urodziłeś sie w przyszłości";
+            ViewBag.ErrorMessage = "Nie możesz być w przyszłości";
             return View("AgeError");
         }
 
