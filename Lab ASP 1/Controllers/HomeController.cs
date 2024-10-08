@@ -7,23 +7,18 @@ namespace Lab_ASP_1.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
         return View();
     }
-   
-
     public IActionResult Privacy()
     {
         return View();
     }
-
     public IActionResult Calculator(Operator? op,double? a,double? b)
     {
         /*var op = Request.Query["op"];
@@ -34,7 +29,6 @@ public class HomeController : Controller
             ViewBag.ErrorMessage = "Niepoprawny format liczby w parametrze a lub b!";
             return View("CustomError");
         }
-
         if (op is null)
         {
             ViewBag.ErrorMessage = "Nieznany Operator";
@@ -61,8 +55,6 @@ public class HomeController : Controller
                 ViewBag.Result = a * b;
                 ViewBag.Operator = "*"; 
                 break; 
-           
-                
         }
         return View();
     }
@@ -85,23 +77,17 @@ public class HomeController : Controller
         var dni = (future - birth).Days;
         ViewBag.Result = dni / 365;
         return View();
-        
-
-
     }
     public IActionResult About()
     {
         return View();
     }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    
 }
-
 public enum Operator
 {
      Add,Sub,Mul,Div
