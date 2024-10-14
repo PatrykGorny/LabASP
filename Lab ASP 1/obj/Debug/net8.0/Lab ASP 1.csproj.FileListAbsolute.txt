@@ -1,0 +1,31 @@
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\appsettings.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.staticwebassets.runtime.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.exe
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.deps.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.runtimeconfig.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.dll
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.pdb
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.AssemblyInfoInputs.cache
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.AssemblyInfo.cs
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.csproj.CoreCompileInputs.cache
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.RazorAssemblyInfo.cache
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.RazorAssemblyInfo.cs
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.sourcelink.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets\msbuild.Lab ASP 1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets\msbuild.build.Lab ASP 1.props
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Lab ASP 1.props
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Lab ASP 1.props
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\scopedcss\bundle\Lab ASP 1.styles.css
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\scopedcss\projectbundle\Lab ASP 1.bundle.scp.css
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.dll
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\refint\Lab ASP 1.dll
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.pdb
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.genruntimeconfig.cache
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\ref\Lab ASP 1.dll
