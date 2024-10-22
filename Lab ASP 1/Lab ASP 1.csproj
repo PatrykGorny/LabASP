@@ -7,4 +7,11 @@
         <RootNamespace>Lab_ASP_1</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Birth\Birth.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Birth\Result.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Calculator\Form.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Calculator\Result.cshtml" />
+    </ItemGroup>
+
 </Project>
