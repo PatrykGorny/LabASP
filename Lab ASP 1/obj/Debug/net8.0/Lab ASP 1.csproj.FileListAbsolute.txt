@@ -1,10 +1,10 @@
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.exe
+C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.dll
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\appsettings.json
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.staticwebassets.runtime.json
-C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.exe
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.deps.json
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.runtimeconfig.json
-C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.dll
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\bin\Debug\net8.0\Lab ASP 1.pdb
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\patry\RiderProjects\Lab ASP 1\Lab ASP 1\obj\Debug\net8.0\Lab ASP 1.AssemblyInfoInputs.cache

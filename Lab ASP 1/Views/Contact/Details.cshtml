@@ -1,0 +1,8 @@
+@model ContactModel
+<h2>Szczegóły kontaktu</h2>
+<p><strong>Imię:</strong> @Model.FirstName</p>
+<p><strong>Nazwisko:</strong> @Model.LastName</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Data urodzenia:</strong> @Model.BirthDate</p>
+<p><strong>Telefon:</strong> @Model.PhoneNumber</p>
+<a asp-action="Index" class="btn btn-primary">Powrót do listy</a>
