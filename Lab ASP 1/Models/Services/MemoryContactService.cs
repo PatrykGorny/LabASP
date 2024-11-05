@@ -19,10 +19,8 @@ public class MemoryContactService :IContactService
 
     public void Update(ContactModel model)
     {
-        if (_contacts.ContainsKey(model.Id))
-        {
+        
             _contacts[model.Id] = model;
-        }
     }
 
     public void Delete(int id)

@@ -76,7 +76,7 @@ public class ContactController : Controller
             return View();
         }
         _contactService.Update(model);
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction("Index");
         /*
         if (!ModelState.IsValid)
         {
