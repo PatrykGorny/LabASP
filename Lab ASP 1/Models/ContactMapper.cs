@@ -13,6 +13,8 @@ public class ContactMapper
             PhoneNumber = model.PhoneNumber,
             Email = model.Email,
             Category = model.Category,
+            Organization = model.Organization,
+            OrganizationId = model.OrganizationId,
         };
     }
 
@@ -27,6 +29,8 @@ public class ContactMapper
             PhoneNumber = entity.PhoneNumber,
             Email = entity.Email,
             Category = entity.Category,
+            Organization = entity.Organization,
+            OrganizationId = entity.OrganizationId
             
 
         };

@@ -1,6 +1,7 @@
 using Lab_ASP_1.Models;
 using Lab_ASP_1.Models.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Lab_ASP_1.Controllers;
 
@@ -31,7 +32,14 @@ public class ContactController : Controller
     [HttpGet]
     public IActionResult Add()
     {
-        return View();
+        var model = new ContactModel();
+        model.Organizations=_contactService.GetOrganizations().Select(i=>new SelectListItem()
+        {
+            Value = i.Id.ToString(),
+            Text = i.Name,
+            Selected = i.Id == 1    
+        }).ToList();
+        return View(model);
     }
     [HttpPost]
     public IActionResult Add(ContactModel model)
