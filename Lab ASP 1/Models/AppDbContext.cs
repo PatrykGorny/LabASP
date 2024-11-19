@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab_ASP_1.Models;
 
-public class AppDbContext: DbContext
+public class AppDbContext: IdentityDbContext<IdentityUser>
 {
     public DbSet<ContactEntity> Contacts { get; set; }
     public DbSet<OrganizationEntity> Organizations { get; set; }
@@ -21,6 +23,59 @@ public class AppDbContext: DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        string User_ID= Guid.NewGuid().ToString();
+        string Admin_ID= Guid.NewGuid().ToString();
+        string User_Role_ID= Guid.NewGuid().ToString();
+        string Admin_Role_ID= Guid.NewGuid().ToString();
+        
+        modelBuilder.Entity<IdentityRole>()
+            .HasData(
+                new IdentityRole(){Id=User_ID,Name ="user",NormalizedName ="USER",ConcurrencyStamp = User_Role_ID},
+                new IdentityRole(){Id=Admin_Role_ID,Name ="admin",NormalizedName ="Admin",ConcurrencyStamp = Admin_Role_ID}
+                );
+        var user = new IdentityUser()
+        {
+            Id = User_ID,
+            Email = "patryk@wsei.edu.pl",
+            NormalizedEmail = "PATRYK@WSEI.EDU.Pl",
+            UserName = "patryk",
+            NormalizedUserName = "PATRYK",
+            EmailConfirmed = true,
+            
+        };
+        PasswordHasher<IdentityUser> hasher = new PasswordHasher<IdentityUser>();
+        hasher.HashPassword(user, "zaq123@");
+        var admin= new IdentityUser()
+        {
+            Id = Admin_ID,
+            Email = "admin@wsei.edu.pl",
+            NormalizedEmail = "ADMIN@WSEI.EDU.Pl",
+            UserName = "admin",
+            NormalizedUserName = "ADMIN",
+            EmailConfirmed = true,
+            
+        };
+        hasher.HashPassword(admin, "admin123");
+        modelBuilder.Entity<IdentityUser>().HasData(user,admin);
+        modelBuilder.Entity<IdentityUser<string>>()
+            .HasData(
+                new IdentityUserRole<string>()
+                {
+                    RoleId=Admin_Role_ID,
+                    UserId=Admin_ID
+                },
+                new IdentityUserRole<string>()
+                {
+                    RoleId=User_Role_ID,
+                    UserId=User_ID
+                },
+                new IdentityUserRole<string>()
+                {
+                    RoleId=User_Role_ID,
+                    UserId=Admin_ID
+                }
+            );
         modelBuilder.Entity<OrganizationEntity>()
             .ToTable("organizations")
             .HasData(
