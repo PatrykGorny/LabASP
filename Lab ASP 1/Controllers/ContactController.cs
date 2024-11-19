@@ -73,7 +73,20 @@ public class ContactController : Controller
             return View(_contacts[id]);
         }
         return NotFound();*/
-        return View(_contactService.GetById(id));
+        /*return View(_contactService.GetById(id));*/
+        
+        var contact = _contactService.GetById(id);
+        if (contact == null)
+        {
+            return NotFound();
+        }
+
+        contact.Organizations = _contactService
+            .GetOrganizations()
+            .Select(o => new SelectListItem { Value = o.Id.ToString(), Text = o.Name })
+            .ToList();
+
+        return View(contact);
     }
 
     [HttpPost]
@@ -96,6 +109,7 @@ public class ContactController : Controller
             return RedirectToAction("Index");
         }
         return NotFound();*/
+     
     }
     public IActionResult Details(int id)
     {

@@ -1,6 +1,6 @@
 @model ContactModel
 <h2>Edytuj kontakt</h2>
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" asp-controller="Contact" method="post">
     <input type="hidden" asp-for="Id" />
     <div>
         <label asp-for="FirstName">Imię</label>
@@ -17,11 +17,27 @@
         <input asp-for="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
+    <div>
+        <label asp-for="PhoneNumber">Phone</label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="BirthDate">Data urodzenia</label>
+        <input asp-for="BirthDate" class="form-control" />
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+    </div>
     <div class="mb-3">
         <label class="form-label" asp-for="Category"></label>
         <select class="form-control" asp-for="Category" asp-items="@Html.GetEnumSelectList<Category>()">
         </select>
         <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="OrganizationId"></label>
+        <select  asp-for="OrganizationId" asp-items="@Model.Organizations">
+        </select>
+        <span asp-validation-for="OrganizationId" class="text-danger"></span>
 
     </div>
     <button type="submit" class="btn btn-primary">Zapisz</button>
