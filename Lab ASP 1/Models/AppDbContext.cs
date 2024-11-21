@@ -14,7 +14,7 @@ public class AppDbContext: IdentityDbContext<IdentityUser>
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = System.IO.Path.Join(path, "contacts.db");
+        DbPath = System.IO.Path.Join(path, "login.db");
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -24,41 +24,44 @@ public class AppDbContext: IdentityDbContext<IdentityUser>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        string User_ID= Guid.NewGuid().ToString();
-        string Admin_ID= Guid.NewGuid().ToString();
-        string User_Role_ID= Guid.NewGuid().ToString();
-        string Admin_Role_ID= Guid.NewGuid().ToString();
+        string User_ID = Guid.NewGuid().ToString();
+        string Admin_ID = Guid.NewGuid().ToString();
+        string User_Role_ID = Guid.NewGuid().ToString();
+        string Admin_Role_ID = Guid.NewGuid().ToString();
         
         modelBuilder.Entity<IdentityRole>()
             .HasData(
-                new IdentityRole(){Id=User_ID,Name ="user",NormalizedName ="USER",ConcurrencyStamp = User_Role_ID},
-                new IdentityRole(){Id=Admin_Role_ID,Name ="admin",NormalizedName ="Admin",ConcurrencyStamp = Admin_Role_ID}
+                new IdentityRole(){Id=User_Role_ID,Name ="user",NormalizedName ="USER",ConcurrencyStamp = User_Role_ID},
+                new IdentityRole(){Id=Admin_Role_ID,Name ="admin",NormalizedName ="ADMIN",ConcurrencyStamp = Admin_Role_ID}
                 );
         var user = new IdentityUser()
         {
             Id = User_ID,
             Email = "patryk@wsei.edu.pl",
-            NormalizedEmail = "PATRYK@WSEI.EDU.Pl",
+            NormalizedEmail = "PATRYK@WSEI.EDU.PL",
             UserName = "patryk",
             NormalizedUserName = "PATRYK",
             EmailConfirmed = true,
             
         };
-        PasswordHasher<IdentityUser> hasher = new PasswordHasher<IdentityUser>();
-        hasher.HashPassword(user, "zaq123@");
+        
         var admin= new IdentityUser()
         {
             Id = Admin_ID,
             Email = "admin@wsei.edu.pl",
-            NormalizedEmail = "ADMIN@WSEI.EDU.Pl",
+            NormalizedEmail = "ADMIN@WSEI.EDU.PL",
             UserName = "admin",
             NormalizedUserName = "ADMIN",
             EmailConfirmed = true,
             
         };
-        hasher.HashPassword(admin, "admin123");
+        
+        PasswordHasher<IdentityUser> hasher = new PasswordHasher<IdentityUser>();
+        user.PasswordHash = hasher.HashPassword(user, "zaq123@");
+        admin.PasswordHash = hasher.HashPassword(admin, "admin123");
         modelBuilder.Entity<IdentityUser>().HasData(user,admin);
-        modelBuilder.Entity<IdentityUser<string>>()
+        
+        modelBuilder.Entity<IdentityUserRole<string>>()
             .HasData(
                 new IdentityUserRole<string>()
                 {
@@ -68,13 +71,14 @@ public class AppDbContext: IdentityDbContext<IdentityUser>
                 new IdentityUserRole<string>()
                 {
                     RoleId=User_Role_ID,
-                    UserId=User_ID
+                    UserId=Admin_ID
                 },
                 new IdentityUserRole<string>()
                 {
                     RoleId=User_Role_ID,
-                    UserId=Admin_ID
+                    UserId=User_ID
                 }
+               
             );
         modelBuilder.Entity<OrganizationEntity>()
             .ToTable("organizations")
@@ -103,8 +107,9 @@ public class AppDbContext: IdentityDbContext<IdentityUser>
             .HasOne<OrganizationEntity>(c=>c.Organization)
             .WithMany(o=>o.Contacts)
             .HasForeignKey(c=>c.OrganizationId);
+        
+        
         modelBuilder.Entity<ContactEntity>()
-             
             .HasData(
             new ContactEntity()
             {

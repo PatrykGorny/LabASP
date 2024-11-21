@@ -1,5 +1,6 @@
 using Lab_ASP_1.Models;
 using Lab_ASP_1.Models.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -30,6 +31,7 @@ public class ContactController : Controller
     }
     //Formularz dodania kontaktu 
     [HttpGet]
+    [Authorize]
     public IActionResult Add()
     {
         var model = new ContactModel();
@@ -42,6 +44,7 @@ public class ContactController : Controller
         return View(model);
     }
     [HttpPost]
+    [Authorize]
     public IActionResult Add(ContactModel model)
     {
         if (!ModelState.IsValid)
@@ -80,7 +83,6 @@ public class ContactController : Controller
         {
             return NotFound();
         }
-
         contact.Organizations = _contactService
             .GetOrganizations()
             .Select(o => new SelectListItem { Value = o.Id.ToString(), Text = o.Name })
